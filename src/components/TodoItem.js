@@ -28,7 +28,7 @@ class TodoItem extends React.Component{
                  <input type="checkbox" checked={this.props.isDone} onChange={this.handlerChange.bind(this)} />
                  <span className={className}>{this.props.text}</span>
              </label>
-             <button ref = "delbutton" className="btn btn-danger" onclick={this.handlerDelete.bind(this)}>删除</button>
+             <button ref = "delbutton" className="btn btn-danger" onClick={this.handlerDelete.bind(this)}>删除</button>
 
             </li>
         )
