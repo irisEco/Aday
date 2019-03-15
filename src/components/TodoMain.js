@@ -15,7 +15,7 @@ class TodoMain extends React.Component{
                  {
                     this.props.todos.map((todo,index)=>{
                         //{...this.props}用来传递todoMain的todos属性和delete,change方法.
-                        return <TodoItem text={todo.text} isDone={todo.isDone} index={index} {...this.props}/>
+                        return <TodoItem  key={index} text={todo.text} isDone={todo.isDone} index={index} {...this.props}/>
                     })
                 } 
                 </ul>
