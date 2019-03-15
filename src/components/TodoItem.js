@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from 'react-dom';
 class TodoItem extends React.Component{
     //改变任务是否已经完成的状态
     handlerChange(){
@@ -6,13 +8,13 @@ class TodoItem extends React.Component{
     }
     //鼠标移入事件
     handlerMouseOver(){
-        React.findDOMNode(this).style.background = '#eee';
-        React.findDOMNode(this.refs.delButton).style.display = 'inline-block';
+        ReactDOM.findDOMNode(this).style.background = '#eee';
+        ReactDOM.findDOMNode(this.refs.delButton).style.display = 'inline-block';
     }
     //鼠标移出事件
     handlerMouseOut(){
-        React.findDOMNode(this).style.background = '#fff';
-        React.findDOMNode(this.refs.delButton).style.display = 'none';
+        ReactDOM.findDOMNode(this).style.background = '#fff';
+        ReactDOM.findDOMNode(this.refs.delButton).style.display = 'none';
 
     }
     //删除当前任务
@@ -37,3 +39,4 @@ class TodoItem extends React.Component{
 
 
 }
+export default TodoItem;

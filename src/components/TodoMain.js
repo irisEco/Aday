@@ -1,4 +1,7 @@
-class Todo extends React.Component{
+import React from "react";
+import ReactDOM from 'react-dom';
+import TodoItem from './TodoItem.js'
+class TodoMain extends React.Component{
     render(){
         if(this.props.todos.length == 0){
             return (
@@ -9,14 +12,16 @@ class Todo extends React.Component{
         }else{
             return (
                 <ul className="todo-main">
-                {
+                 {
                     this.props.todos.map((todo,index)=>{
                         //{...this.props}用来传递todoMain的todos属性和delete,change方法.
                         return <TodoItem text={todo.text} isDone={todo.isDone} index={index} {...this.props}/>
                     })
-                }
+                } 
                 </ul>
             )
         }
     }
 }
+
+export default TodoMain;

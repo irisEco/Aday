@@ -1,9 +1,9 @@
-'use strict'
+import ReactDOM from 'react-dom';
 import React from 'react';
 import LocalDb from 'LocalDb';
-import TodoHeader from './TodoHeader.js';
-import TodoMain from './TodoMain.js';
-import TodoFooter from './TodoFooter.js';
+import TodoHeader from './TodoHeader';
+import TodoMain from './TodoMain';
+import TodoFooter from './TodoFooter';
 
 class App extends React.Component{
     constructor(){
@@ -30,7 +30,7 @@ class App extends React.Component{
  }
  //添加任务,是传递给Header组件的方法
  addTodo(todoItem){
-     this.state.todos.push(tofoItem);
+     this.state.todos.push(todoItem);
      this.db.set('todos',this.state.todos);
      this.allChecked();
  }
@@ -80,19 +80,19 @@ class App extends React.Component{
     let info = {
         isAllChecked:this.state.isAllChecked,
         todoCount:this.state.todos.length||0,
-        todoDoneCount: (this.state.todos && this.sate.todos.filter((todo)=>todo.isDone)).length||0
+        todoDoneCount: (this.state.todos && this.state.todos.filter((todo)=>todo.isDone)).length||0
     };
 
     return (
-<div className="todo-wrap">
+ <div className="todo-wrap">
 <TodoHeader addTodo={this.addTodo.bind(this)} />
 <TodoMain todos={this.state.todos} deleteTodo={this.deleteTodo.bind(this)} changeTodoState={this.changeTodoState.bind(this)}/>
 <TodoFooter {...info} changeTodoState = {this.changeTodoState.bind(this)} clearDone={this.clearDone.bind(this)}/>
-</div>
+</div> 
     );
 
  }
 
 }
 
-React.render(<App/>,document.getElementById('app'));
+ReactDOM.render(<App/>,document.getElementById('app'));
