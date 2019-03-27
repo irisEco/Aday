@@ -9,7 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: ['./src/entry.js'],  // 指定编译打包入口文件
+  entry: ['./client/entry.js'],  // 指定编译打包入口文件
   output: {   // 编译完了，输出到这个目录，这个文件名
     path: path.join(__dirname, 'out'),
     filename: 'bundle.js'
